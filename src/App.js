@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
+    constructor(){
+        super();
+        this.state = {
+        currentPage: 'App',
+        }
+    }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div id = "main-wrapper"> 
+        <Header/>
+        <div className = 'content'>
+          <div className = {this.state.currentPage}>
+          </div>
+        </div>
+        <Footer/>
       </div>
     );
   }
